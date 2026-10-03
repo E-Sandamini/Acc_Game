@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        ගිණුම්කරණ වර්ගීකරණ ක්‍රීඩාව
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="title-area">
+
+            <div class="book-icon">
+                📚
+            </div>
+
+            <div>
+
+                <h1>
+                    ගිණුම්කරණ මූලිකාංග වර්ගීකරණ ක්‍රීඩාව
+                </h1>
+
+                <p>
+                    අයිතම නිවැරදි ගිණුම් කාණ්ඩයට ඇද දමන්න
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="score-area">
+
+            <div class="score-box">
+
+                <span>
+                    ලකුණු
+                </span>
+
+                <strong id="score">
+                    0
+                </strong>
+
+                <small>
+                    / 25
+                </small>
+
+            </div>
+
+
+            <div class="remaining-box">
+
+                <span>
+                    ඉතිරි
+                </span>
+
+                <strong id="remaining">
+                    25
+                </strong>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         GAME CONTROLS
+    ========================== -->
+
+    <div class="game-controls">
+
+        <button id="start-btn">
+            ▶️ ක්‍රීඩාව ආරම්භ කරන්න
+        </button>
+
+
+        <div class="timer-box">
+
+            <span class="timer-icon">
+                ⏱️
+            </span>
+
+            <span>
+                කාලය
+            </span>
+
+            <strong id="timer">
+                00:00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         FEEDBACK
+    ========================== -->
+
+    <div id="feedback"
+         class="feedback">
+    </div>
+
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories">
+
+
+        <!-- ASSETS -->
+
+        <div class="category asset"
+             data-category="asset">
+
+            <div class="category-header">
+
+                <div class="category-icon">
+                    💰
+                </div>
+
+                <div>
+
+                    <h2>
+                        වත්කම්
+                    </h2>
+
+                    <p>
+                        Assets
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="drop-area">
+
+                <span class="drop-text">
+                    අයිතම මෙහි දමන්න
+                </span>
+
+                <div class="placed-items"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LIABILITIES -->
+
+        <div class="category liability"
+             data-category="liability">
+
+            <div class="category-header">
+
+                <div class="category-icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <h2>
+                        වගකීම්
+                    </h2>
+
+                    <p>
+                        Liabilities
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="drop-area">
+
+                <span class="drop-text">
+                    අයිතම මෙහි දමන්න
+                </span>
+
+                <div class="placed-items"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EQUITY -->
+
+        <div class="category equity"
+             data-category="equity">
+
+            <div class="category-header">
+
+                <div class="category-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <h2>
+                        හිමිකම්
+                    </h2>
+
+                    <p>
+                        Equity
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="drop-area">
+
+                <span class="drop-text">
+                    අයිතම මෙහි දමන්න
+                </span>
+
+                <div class="placed-items"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INCOME -->
+
+        <div class="category income"
+             data-category="income">
+
+            <div class="category-header">
+
+                <div class="category-icon">
+                    📈
+                </div>
+
+                <div>
+
+                    <h2>
+                        ආදායම්
+                    </h2>
+
+                    <p>
+                        Income
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="drop-area">
+
+                <span class="drop-text">
+                    අයිතම මෙහි දමන්න
+                </span>
+
+                <div class="placed-items"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EXPENSES -->
+
+        <div class="category expense"
+             data-category="expense">
+
+            <div class="category-header">
+
+                <div class="category-icon">
+                    💸
+                </div>
+
+                <div>
+
+                    <h2>
+                        වියදම්
+                    </h2>
+
+                    <p>
+                        Expenses
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="drop-area">
+
+                <span class="drop-text">
+                    අයිතම මෙහි දමන්න
+                </span>
+
+                <div class="placed-items"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ITEMS
+    ========================== -->
+
+    <section class="items-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="small-label">
+                    ගිණුම් අයිතම
+                </span>
+
+                <h2>
+                    අයිතම නිවැරදි ස්ථානයට දමන්න
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="items-container"
+             class="items-container">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RESULT
+    ========================== -->
+
+    <section id="result"
+             class="result hidden">
+
+        <div class="result-icon">
+            🎉
+        </div>
+
+
+        <h2>
+            විශිෂ්ටයි!
+        </h2>
+
+
+        <p>
+            ඔබ සියලුම ගිණුම් අයිතම නිවැරදිව
+            වර්ගීකරණය කළා.
+        </p>
+
+
+        <div class="final-score">
+
+            <span>
+                ඔබේ ලකුණු
+            </span>
+
+            <strong id="final-score">
+                0 / 25
+            </strong>
+
+        </div>
+
+
+        <div class="final-time">
+
+            <span>
+                ⏱️ ගත වූ කාලය
+            </span>
+
+            <strong id="final-time">
+                00:00
+            </strong>
+
+        </div>
+
+
+        <button id="restart-btn">
+            🔄 නැවත ක්‍රීඩා කරන්න
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            📖 ඉගෙනීමත් විනෝදජනකයි!
+        </p>
+        <br>
+        <p>
+            © යට්ටපාත කණිෂ්ඨ විද්‍යාලය - Yattapatha Kanishta Vidyalaya - 2026
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
